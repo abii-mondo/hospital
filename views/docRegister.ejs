@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<%- include ('./partials/head') %>
+	</head>
+
+	<div class="container-fluid">
+
+		<header>
+			<%- include ('./partials/header') %>
+		</header>
+
+		<h5>Fill in the form and submit to register as Doctor</h5>
+
+		<body>
+			<form action='/doctor' method="POST">
+			  <div class="mb-3">
+			    <label for="name" class="form-label">Name</label>
+			    <input type="text" class="form-control" id="name" name="name">
+			  </div>
+
+			  <div class="mb-3">
+			    <label for="email" class="form-label">Email</label>
+			    <input type="email" class="form-control" id="email" name="email">
+			  </div>
+
+			  <div class="mb-3">
+			    <label for="password1" class="form-label">Password</label>
+			    <input type="password" class="form-control" id="password1" name="password">
+			  </div>
+
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</body>
+
+		<footer>
+		</footer>
+		
+	</div>
+</html>

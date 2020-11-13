@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<%- include ('./partials/head') %>
+	</head>
+
+	<div class="container-fluid ">
+
+		<header>
+			<%- include ('./partials/header') %>
+		</header>
+
+		<body>
+
+			<div>
+			<% for( let i= 0; i<doctors.length; i++){ %>
+
+			<!-- Displaying each movie title with its specific link to display details -->
+			<h4>
+				<a id="name" href="/doctor/<%= doctors[i]._id %>"> <%= doctors[i].name %> </a>
+			</h4>
+
+
+			<h7>Email: <%= doctors[i].email %> </h7>
+
+			<hr>
+			<% } %>
+		
+		</body>
+		<footer>
+		</footer>
+		
+	</div>
+</html>

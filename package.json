@@ -1,0 +1,17 @@
+{
+  "name": "doctor-patient",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "Abraham Mondo",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.14",
+    "nodemon": "^2.0.6"
+  },
+  "script": {
+    "on": "nodemon app.js"
+  }
+}

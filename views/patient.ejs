@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<%- include ('./partials/head') %>
+	</head>
+
+	<div class="container-fluid ">
+
+		<header>
+			<%- include ('./partials/header') %>
+		</header>
+
+		<body>
+
+
+				<h5 id="name"><%=eachPatient.name %></h5>
+				<h5><%= eachPatient.age %> years</h5>
+				<h5><%= eachPatient.email %></h5>
+				<p> <%= eachPatient.doctor %></p>
+
+				<button id="delButton">Delete</button>
+				<button id ="edit"> <a href="/edit/<%= eachPatient._id %>">Edit</a></button>
+		
+		</body>
+
+		<script type="text/javascript">
+			let delBtn = document.querySelector('#delButton')
+
+			let editBtn = document.querySelector('#edit')
+		let name = document.querySelector('#name')
+
+		//_______Delete record function____________
+		function deletePatient() {
+
+			let data = {name: name.input}
+			//fetch delete 
+			fetch('/delete', {
+				method: 'DELETE',
+				body: JSON.stringify(data),
+				headers: {
+					'content-Type': 'application/json'
+				}
+			})
+		
+			.then(response => response.json())
+			.then(result => {
+				console.log('Deleted:', result)
+			})
+			//calling the redirect function after fetch delete in completed
+			.then(redirectToPatients)
+
+			.catch(error => {
+				console.log('Error:', error)
+			})
+		}
+
+		//_______Redirecting route function________
+		function redirectToPatients() {
+			location.href = '/all-patients'
+		}
+
+		//_______Event listener for delete button________
+		delBtn.addEventListener('click', deletePatient)
+
+		</script>
+		<footer>
+		</footer>
+		
+	</div>
+</html>
